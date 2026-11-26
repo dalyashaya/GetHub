@@ -1,0 +1,23 @@
+name: GetHub CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t gethub .
+
+      - name: Run automated tests
+        run: |
+          set -o pipefail
+          printf '6\n0\n' | docker run --rm -i gethub ./a3test | tee test-results.txt
+          grep -F "Your mark is 25/25" test-results.txt

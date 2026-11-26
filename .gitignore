@@ -1,0 +1,10 @@
+*.o
+a3
+a3test
+gethub_asan
+.DS_Store
+*.dSYM/
+.vscode/
+.VSCodeCounter/
+.idea/
+test-results.txt

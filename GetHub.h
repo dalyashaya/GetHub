@@ -1,0 +1,39 @@
+#ifndef GETHUB_H
+#define GETHUB_H
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include "RepoList.h"
+#include "defs.h"
+
+using namespace std;
+
+class GetHub {
+public:
+    // Constructor
+    GetHub();
+   
+    // Destructor
+    ~GetHub();
+   
+    // Adders and removers
+    void addRepo(const string& repo, const string& owner);
+    void deleteRepo(int repo); 
+    int getNumRepos() const { return repoList->size(); }
+   
+    void addFile(const string& repo, const string& title, const string& content, const Date& date);
+    void addFile(int repo, const string& title, const string& content, const Date& date);
+    void deleteFile(int repo, int file);
+
+    // Client services
+    bool download(int repo, Repo**) const;
+    // Other
+    void printRepos() const;
+    void printRepo(int repo) const;
+    void printFileContents(int repo, int file) const;
+
+private:
+    RepoList* repoList;
+};
+#endif
