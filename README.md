@@ -1,4 +1,5 @@
 # GetHub
+[![GetHub CI](https://github.com/dalyashaya/GetHub/actions/workflows/ci.yml/badge.svg)](https://github.com/dalyashaya/GetHub/actions/workflows/ci.yml)
 
 A lightweight, GitHub-inspired repository management simulator built in C++. GetHub demonstrates object-oriented programming, linked list data structures, dynamic memory management, and client-side repository cloning.
 
